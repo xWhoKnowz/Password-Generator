@@ -2,8 +2,6 @@
 var generateBtn = document.querySelector("#generate");
 
 
-
-
 function generatePassword() {
   // Below are confirm request that establish what types of characters the user wants in their password
   // We also have a prompt that requests input for character length
@@ -24,9 +22,14 @@ function generatePassword() {
 
   console.log(answer4);
 
-  var charCount = window.prompt("How many characters do you need for your password?")
-
-  console.log(charCount);
+  var charCount = window.prompt("How many characters do you want for your password?")
+  
+  if (charCount<8 || charCount>128){
+    window.alert ("Password must be between 8 and 128 characters.")
+    window.prompt ("How many characters do you want for your password?")
+  } if (charCount>8 && charCount<128) {    
+    return console.log(charCount)
+  }
 
   //Below are our arrays the PC will use to create the password 
   var alphaUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -55,7 +58,8 @@ function generatePassword() {
 
   console.log(sC);
 
-  // 
+
+  // below our my if and else if conditionals which will help the pc understand which arrays to pull characters from based on user input
 
   if (answer1 === true &&
     answer2 === true &&
@@ -79,7 +83,7 @@ function generatePassword() {
     answer4 === true
   ) {
 
-    
+
 
   } else if (answer1 === true &&
     answer2 === true &&
@@ -137,7 +141,7 @@ function generatePassword() {
 
 
 
-  }else if (answer1 === true &&
+  } else if (answer1 === true &&
     answer2 === true &&
     answer3 === false &&
     answer4 === false
@@ -180,6 +184,8 @@ function generatePassword() {
 
   }
 }
+
+
 generatePassword();
 
 
