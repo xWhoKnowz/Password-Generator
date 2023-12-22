@@ -14,23 +14,14 @@ THEN a password is generated that matches the selected criteria
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
 
-// // Alert
-// window.alert("Hello world!");
-​
-// // Confirm
-// var answer = window.confirm("Do you like pizza?")
-// console.log(answer);
-// alert(answer)
-​
-// var obviously = window.prompt("Are you ready for Winter Break?")
-​
-// console.log(obviously);
-​
-console.log(
-    Math.floor(Math.random() * 11)
-    );
-​
-// User Choice
-var userChoice = prompt("Choose R, P, or S");
-​
-console.log(userChoice);
+What do I need?
+
+I need an array that holds a variety of each character type
+
+I need a function that returns 
+
+I need an prompt that ask which character types the user wants for their password
+
+I need a function that logs the user responses to prompts 
+
+I need a
