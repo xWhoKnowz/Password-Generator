@@ -37,7 +37,24 @@ function generatePassword(){
   
   var specialChar =["@","(","~","!","@","#","$","%","^","&","*","_","-","+","=","`","(",")","{","}","[","]",":",";","'","<",">",",",".","?","/",")"];
 
- 
+  // below are the variable that will be used by the pc to select the radomized characters for the password
+  // Math.random (selects a random number between 0 and 1)is being multiplied by the index length of each array and then Math.floor rounds them down to the nearest whole integer
+var aU = Math.floor(Math.random()*alphaUpper.length);
+
+console.log(aU);
+
+var aL = Math.floor(Math.random()*alphaLower.length);
+
+console.log(aL);
+
+var nB = Math.floor(Math.random()*number.length);
+
+console.log(nB);
+
+var sC = Math.floor(Math.random()*specialChar.length);
+
+console.log(sC);
+
 }
 
 generatePassword();
