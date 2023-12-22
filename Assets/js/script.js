@@ -67,63 +67,64 @@ function generatePassword() {
     answer4 === true
   ) {
 
-
-
-  } else if (answer1 === false &&
-    answer2 === true &&
-    answer3 === true &&
-    answer4 === true
-  ) {
-
-
-
-  } else if (answer1 === true &&
-    answer2 === false &&
-    answer3 === true &&
-    answer4 === true
-  ) {
-
-
-
-  } else if (answer1 === true &&
-    answer2 === true &&
-    answer3 === false &&
-    answer4 === true
-  ) {
-
-
-
-  } else if (answer1 === true &&
-    answer2 === true &&
-    answer3 === true &&
-    answer4 === false
-  ) {
-
-
-
-  } else if (answer1 === false &&
-    answer2 === false &&
-    answer3 === true &&
-    answer4 === true
-  ) {
-
-
-
-  } else if (answer1 === false &&
-    answer2 === true &&
-    answer3 === false &&
-    answer4 === true
-  ) {
-
-
+    var pool1 = alphaUpper.concat(alphaLower, number, specialChar)
+    
 
   } else if (answer1 === false &&
     answer2 === true &&
     answer3 === true &&
+    answer4 === true
+  ) {
+
+    var pool2 = alphaLower.concat(number, specialChar)
+
+  } else if (answer1 === true &&
+    answer2 === false &&
+    answer3 === true &&
+    answer4 === true
+  ) {
+
+    var pool3 = alphaUpper.concat(number, specialChar)
+
+  } else if (answer1 === true &&
+    answer2 === true &&
+    answer3 === false &&
+    answer4 === true
+  ) {
+
+    var pool4 = alphaUpper.concat(alphaLower, specialChar)
+
+  } else if (answer1 === true &&
+    answer2 === true &&
+    answer3 === true &&
     answer4 === false
   ) {
 
+    var pool5 = alphaUpper.concat(alphaLower, number)
 
+  } else if (answer1 === false &&
+    answer2 === false &&
+    answer3 === true &&
+    answer4 === true
+  ) {
+
+    var pool6 = number.concat(specialChar)
+
+  } else if (answer1 === false &&
+    answer2 === true &&
+    answer3 === false &&
+    answer4 === true
+  ) {
+
+    var pool7 = alphaLower.concat(specialChar)
+
+  } else if (answer1 === false &&
+    answer2 === true &&
+    answer3 === true &&
+    answer4 === false
+  ) {
+
+    var pool8 = alphaLower.concat(number)
 
   } else if (answer1 === true &&
     answer2 === false &&
@@ -131,7 +132,7 @@ function generatePassword() {
     answer4 === true
   ) {
 
-
+    var pool9 = alphaUpper.concat(specialChar)
 
   } else if (answer1 === true &&
     answer2 === false &&
@@ -139,7 +140,7 @@ function generatePassword() {
     answer4 === false
   ) {
 
-
+    var pool10 = alphaUpper.concat(number)
 
   } else if (answer1 === true &&
     answer2 === true &&
@@ -147,7 +148,7 @@ function generatePassword() {
     answer4 === false
   ) {
 
-
+    var pool11 = alphaUpper.concat(alphaLower)
 
   } else if (answer1 === true &&
     answer2 === false &&
@@ -155,7 +156,7 @@ function generatePassword() {
     answer4 === false
   ) {
 
-
+    
 
   } else if (answer1 === false &&
     answer2 === true &&
