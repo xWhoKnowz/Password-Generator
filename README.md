@@ -20,8 +20,8 @@ Refer to the liscense in the GitHub repo.
 
 ## Links
 
-Password Generator:
+Password Generator: https://xwhoknowz.github.io/Password-Generator/
 
 ## Website Sample
 
-![Password Generator website sample image]()
+![Password Generator website sample image](./Assets/img/Password-Generator.jpg)
