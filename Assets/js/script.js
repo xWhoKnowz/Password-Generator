@@ -3,9 +3,20 @@ var generateBtn = document.querySelector("#generate");
 
 
 function generatePassword() {
-  // Below are confirm request that establish what types of characters the user wants in their password
-  // We also have a prompt that requests input for character length
-  // all responses are logged to the console
+
+  var charCount = window.prompt("How many characters do you want for your password?")
+
+  if (charCount < 8 || charCount > 128) {
+    window.alert("Password must be between 8 and 128 characters. Please try again.")
+    // window.prompt("How many characters do you want for your password?")
+  } 
+  
+  if (charCount > 8 && charCount < 128) {
+    console.log(charCount)
+  }
+
+  var newPass = [];
+
   var answer1 = window.confirm("Do you want uppercase letters?");
 
   console.log(answer1);
@@ -22,16 +33,7 @@ function generatePassword() {
 
   console.log(answer4);
 
-  var charCount = window.prompt("How many characters do you want for your password?")
-  
-  if (charCount<8 || charCount>128){
-    window.alert ("Password must be between 8 and 128 characters.")
-    window.prompt ("How many characters do you want for your password?")
-  } if (charCount>8 && charCount<128) {    
-    return console.log(charCount)
-  }
 
-  //Below are our arrays the PC will use to create the password 
   var alphaUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
   var alphaLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
@@ -40,154 +42,56 @@ function generatePassword() {
 
   var specialChar = ["@", "(", "~", "!", "@", "#", "$", "%", "^", "&", "*", "_", "-", "+", "=", "`", "(", ")", "{", "}", "[", "]", ":", ";", "'", "<", ">", ",", ".", "?", "/", ")"];
 
-  // below are the variable that will be used by the pc to select the radomized characters for the password
-  // Math.random (selects a random number between 0 and 1)is being multiplied by the index length of each array and then Math.floor rounds them down to the nearest whole integer
-  var aU = Math.floor(Math.random() * alphaUpper.length);
-
-  console.log(aU);
-
-  var aL = Math.floor(Math.random() * alphaLower.length);
-
-  console.log(aL);
-
-  var nB = Math.floor(Math.random() * number.length);
-
-  console.log(nB);
-
-  var sC = Math.floor(Math.random() * specialChar.length);
-
-  console.log(sC);
+  var charCombine = []
 
 
-  // below our my if and else if conditionals which will help the pc understand which arrays to pull characters from based on user input
+  if (answer1 === true) {
 
-  if (answer1 === true &&
-    answer2 === true &&
-    answer3 === true &&
-    answer4 === true
-  ) {
+    var aU = Math.floor(Math.random() * alphaUpper.length);
 
-    var pool1 = alphaUpper.concat(alphaLower, number, specialChar)
-    
-
-  } else if (answer1 === false &&
-    answer2 === true &&
-    answer3 === true &&
-    answer4 === true
-  ) {
-
-    var pool2 = alphaLower.concat(number, specialChar)
-
-  } else if (answer1 === true &&
-    answer2 === false &&
-    answer3 === true &&
-    answer4 === true
-  ) {
-
-    var pool3 = alphaUpper.concat(number, specialChar)
-
-  } else if (answer1 === true &&
-    answer2 === true &&
-    answer3 === false &&
-    answer4 === true
-  ) {
-
-    var pool4 = alphaUpper.concat(alphaLower, specialChar)
-
-  } else if (answer1 === true &&
-    answer2 === true &&
-    answer3 === true &&
-    answer4 === false
-  ) {
-
-    var pool5 = alphaUpper.concat(alphaLower, number)
-
-  } else if (answer1 === false &&
-    answer2 === false &&
-    answer3 === true &&
-    answer4 === true
-  ) {
-
-    var pool6 = number.concat(specialChar)
-
-  } else if (answer1 === false &&
-    answer2 === true &&
-    answer3 === false &&
-    answer4 === true
-  ) {
-
-    var pool7 = alphaLower.concat(specialChar)
-
-  } else if (answer1 === false &&
-    answer2 === true &&
-    answer3 === true &&
-    answer4 === false
-  ) {
-
-    var pool8 = alphaLower.concat(number)
-
-  } else if (answer1 === true &&
-    answer2 === false &&
-    answer3 === false &&
-    answer4 === true
-  ) {
-
-    var pool9 = alphaUpper.concat(specialChar)
-
-  } else if (answer1 === true &&
-    answer2 === false &&
-    answer3 === true &&
-    answer4 === false
-  ) {
-
-    var pool10 = alphaUpper.concat(number)
-
-  } else if (answer1 === true &&
-    answer2 === true &&
-    answer3 === false &&
-    answer4 === false
-  ) {
-
-    var pool11 = alphaUpper.concat(alphaLower)
-
-  } else if (answer1 === true &&
-    answer2 === false &&
-    answer3 === false &&
-    answer4 === false
-  ) {
-
-    
-
-  } else if (answer1 === false &&
-    answer2 === true &&
-    answer3 === false &&
-    answer4 === false
-  ) {
+    console.log(alphaUpper[aU]);
+    newPass.push(alphaUpper[aU])
+    charCombine = charCombine.concat(alphaUpper)
+  }
 
 
+  if (answer2 === true) {
+    var aL = Math.floor(Math.random() * alphaLower.length);
 
-  } else if (answer1 === false &&
-    answer2 === false &&
-    answer3 === true &&
-    answer4 === false
-  ) {
+    console.log(alphaLower[aL]);
+    newPass.push(alphaLower[aL])
+    charCombine = charCombine.concat(alphaLower)
+  }
+  if (answer3 === true) {
+    var nB = Math.floor(Math.random() * number.length);
 
+    console.log(number[nB]);
+    newPass.push(number[nB])
+    charCombine = charCombine.concat(number)
+  }
+  if (answer4 === true) {
 
-
-  } else if (answer1 === false &&
-    answer2 === false &&
-    answer3 === false &&
-    answer4 === true
-  ) {
-  } else {
-
-
+    var sC = Math.floor(Math.random() * specialChar.length);
+    newPass.push(specialChar[sC])
+    console.log(specialChar[sC]);
+    charCombine = charCombine.concat(specialChar)
 
   }
+  if (answer1 === false && answer2 === false && answer3 === false && answer4 === false) {
+    window.alert("You must select at least one character type to continue. Please try again.")
+  }
+  console.log(charCombine);
+  for (var i = newPass.length; i < charCount; i++) {
+    newPass.push(charCombine[Math.floor(Math.random() * charCombine.length)])
+    console.log(i);
+
+  }
+
+
+  console.log(newPass);
+
+  return newPass.join("")
 }
-
-
-generatePassword();
 
 
 // Write password to the #password input
